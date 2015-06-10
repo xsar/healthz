@@ -52,7 +52,7 @@ func healthCheck() {
 func Alert(content string) {
 	req := httplib.Post(g.Config().Sender)
 	req.Param("tos", g.Config().Tos)
-	req.Param("content", content)
+	req.Param("content", fmt.Sprintf("%s %s", content, time.Now().Format("2006-01-02 15:04:05")))
 	_, err := req.String()
 	log.Println(content)
 	if err != nil {
