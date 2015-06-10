@@ -14,12 +14,15 @@ type HttpConfig struct {
 }
 
 type GlobalConfig struct {
-	Debug    bool        `json:"debug"`
-	Http     *HttpConfig `json:"http"`
-	Interval int         `json:"interval"`
-	Sender   string      `json:"sender"`
-	Tos      string      `json:"tos"`
-	Urls     []string    `json:"urls"`
+	Debug     bool        `json:"debug"`
+	Http      *HttpConfig `json:"http"`
+	Interval  int         `json:"interval"`
+	Sender    string      `json:"sender"`
+	Tos       string      `json:"tos"`
+	CTimeout  int64       `json:"ctimeout"`
+	RWTimeout int64       `json:"rwtimeout"`
+	OkStrs    []string    `json:"okstrs"`
+	Urls      []string    `json:"urls"`
 }
 
 var (

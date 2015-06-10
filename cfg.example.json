@@ -7,6 +7,9 @@
 	"interval": 60,
 	"sender": "http://sender.example.com",
 	"tos": "18633335555,18633335556",
+	"ctimeout": 2000,
+	"rwtimeout": 3000,
+	"okstrs": ["ok", "success"],
 	"urls": [
 		"http://127.0.0.1:1988/health agent down",
 		"http://127.0.0.1:2002/health"
