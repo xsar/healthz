@@ -1,0 +1,14 @@
+{
+	"debug": true,
+	"http": {
+		"enabled": true,
+		"listen": ":2002"
+	},
+	"interval": 60,
+	"sender": "http://sender.example.com",
+	"tos": "18633335555,18633335556",
+	"urls": [
+		"http://127.0.0.1:1988/health agent down",
+		"http://127.0.0.1:2002/health"
+	]
+}
