@@ -32,7 +32,10 @@ func healthCheck() {
 		req := httplib.Get(url).SetTimeout(ctimeout, rwtimeout)
 		resp, err := req.String()
 		if err != nil {
-			Alert(fmt.Sprintf("curl %s fail %s", url, err.Error()))
+			// 如果仅仅是超时，直接忽略
+			if !strings.Contains(err.Error(), "timeout") {
+				Alert(fmt.Sprintf("curl %s fail %s", url, err.Error()))
+			}
 			continue
 		}
 
